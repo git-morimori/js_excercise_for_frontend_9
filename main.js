@@ -17,7 +17,7 @@
     quizzes: [],
     currentIndex: 0,
     numberOfCorrects: 0
-  }
+  };
 
   // HTMLのid値がセットされているDOMを取得する
   const questionElement = document.getElementById('question');
@@ -28,12 +28,12 @@
   // ページの読み込みが完了したらクイズ情報を取得する
   window.addEventListener('load', (event) => {
     fetchQuizData();
-  })
+  });
 
   // 「Restart」ボタンをクリックしたら再度クイズデータを取得する
   restartButton.addEventListener('click', (event) => {
     fetchQuizData();
-  })
+  });
 
 
   // `fetchQuizData関数`を実装する
@@ -69,7 +69,7 @@
     } catch (error) {
       alert(`error! ${error.message}`);
     }
-  };
+  }
 
   // setNextQuiz関数を実装する
   // - 実現したいこと
@@ -171,7 +171,7 @@
   function buildAnswers(quiz) {
     const correctAnswer = quiz.correct_answer;
     const incorrectAnswers = quiz.incorrect_answers;
-    const answers = [correctAnswer, ...incorrectAnswers]
+    const answers = [correctAnswer, ...incorrectAnswers];
 
     return shuffle(answers);
   }
